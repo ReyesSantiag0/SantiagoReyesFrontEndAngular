@@ -1,0 +1,33 @@
+<h1>Lista de Comentarios</h1>
+<table *ngIf="listComentarios.length > 0" class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Título</th>
+      <th scope="col">Autor</th>
+      <th scope="col">Fecha</th>
+      <td align="center" colspan="2">Operaciones</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let coment of listComentarios">
+      <td>{{coment.titulo}}</td>
+      <td>{{coment.autor}}</td>
+      <td>{{coment.fechaCreacion | date:'dd/mm/yyyy'}}</td>
+      <td style="width: 5%">
+        <button type="button" class="btn btn-success btn-sm btn-end">Editar</button>
+      </td>
+      <td style="width: 5%">
+        <button type="button" class="btn btn-danger btn-sm btn-end">Editar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="listComentarios.length == 0" class="row">
+  <h5>No hay datos para mostrar</h5>
+</div>
+
+
+<div aling="center">
+  <button type="button" class="btn btn-warning">Agregar comentario</button>
+</div>

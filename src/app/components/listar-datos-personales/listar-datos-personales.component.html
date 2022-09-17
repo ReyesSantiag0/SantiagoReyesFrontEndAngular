@@ -1,0 +1,39 @@
+<h1>Lista de Datos Personales</h1>
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Identificación</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Dirección</th>
+      <th scope="col">Email</th>
+      <th scope="col">Teléfono</th>
+      <td align="center" colspan="2">Operaciones</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let coment of listDatosPersonales">
+      <td>{{coment.identificacion}}</td>
+      <td>{{coment.nombre}}</td>
+      <td>{{coment.apellido}}</td>
+      <td>{{coment.direccion}}</td>
+      <td>{{coment.email}}</td>
+      <td>{{coment.telefono}}</td>
+      <td style="width: 5%">
+        <button type="button" class="btn btn-success btn-sm btn-end">Editar</button>
+      </td>
+      <td style="width: 5%">
+        <button type="button" class="btn btn-danger btn-sm btn-end">Editar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="listDatosPersonales.length == 0" class="row">
+  <h5>No hay datos para mostrar</h5>
+</div>
+
+
+<div aling="center">
+  <button type="button" class="btn btn-warning">Agregar Datos</button>
+</div>
